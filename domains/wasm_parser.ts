@@ -15,11 +15,11 @@ export function parse(hexStr: string): WasmRoot {
   const trimmedStr = hexStr.replaceAll("\n", "").replaceAll(" ", "");
   const magicWord = trimmedStr.substring(0, 8);
   if (magicWord !== MAGIC_WORD) {
-    throw new Error(`expected magic word 00 61 73 6d, actual: ${magicWord}`);
+    throw new Error(`expected magic word 0061736d, actual: ${magicWord}`);
   }
   const version = trimmedStr.substring(8, 16);
   if (version !== VERSION) {
-    throw new Error(`expected version 01 00 00 00, actual: ${version}`);
+    throw new Error(`expected version 01000000, actual: ${version}`);
   }
   return {
     type: "root",

@@ -41,7 +41,7 @@ Deno.test("Occur error when invalid magic word", () => {
       parse(INVALID_MAGIC_WORD);
     },
     Error,
-    "expected magic word 00 61 73 6d, actual: 0062736d",
+    "expected magic word 0061736d, actual: 0062736d"
   );
 });
 
@@ -51,6 +51,6 @@ Deno.test("Occur error when invalid version", () => {
       parse(INVALID_VERSION);
     },
     Error,
-    "expected version 01 00 00 00, actual: 01000001",
+    "expected version 01000000, actual: 01000001"
   );
 });
